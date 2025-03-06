@@ -1,7 +1,10 @@
 name: hello-world
 
 on: 
-  push
+  push:
+    paths:
+      - ".github/workflows/hello-world.yml"
+      - "hello_world.txt"
   # schedule:
   #   - cron: '*/5 * * * *'  
 
