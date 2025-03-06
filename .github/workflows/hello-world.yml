@@ -1,6 +1,9 @@
 name: hello-world
 
-on: push
+on: 
+  push:
+  schedule:
+    - cron: '*/5 * * * *'  
 
 jobs:
     hello-world-job:
