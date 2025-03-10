@@ -12,6 +12,12 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps:
+            # use the actions/checkout@v2 action to checkout the repository
+            - run: pwd && ls -la
+            - uses: actions/checkout@v2
+            - run: pwd && ls -la
+
+            # use the actions/setup-go@v5 action to set up Go
             - run: go version
             - uses: actions/setup-go@v5
               with:
