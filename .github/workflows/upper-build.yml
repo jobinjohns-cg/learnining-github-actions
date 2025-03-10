@@ -33,5 +33,11 @@ jobs:
                 go test
                 ./upper this should be convert into upper case
               working-directory: demo-files/upper
+            
+            
+            - name: Execute python script
+              run: |
+                python3 upper.py 'Testing This ouT'
+              working-directory: demo-files/PYTHON
 
             
