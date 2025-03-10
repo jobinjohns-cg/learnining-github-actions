@@ -15,14 +15,15 @@ jobs:
             # use the actions/checkout@v2 action to checkout the repository
             - run: pwd && ls -la
             - name: Checkout repository
-              uses: actions/checkout@v2
+              uses: actions/checkout@v4
             - run: pwd && ls -la
 
             # use the actions/setup-go@v5 action to set up Go
             - run: go version
             - uses: actions/setup-go@v5
               with:
-                  go-version: '1.22'
+                #   go-version: '1.22'
+                go-version-file: ./demo-files/upper/go.mod
             - run: go version\
 
             - name: build and test the go project
@@ -35,6 +36,11 @@ jobs:
               working-directory: demo-files/upper
             
             
+    python-build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
             - name: Execute python script
               run: |
                 python --version
