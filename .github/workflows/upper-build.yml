@@ -31,7 +31,7 @@ jobs:
                 go build
                 ls
                 go test
-                ./demo-files/upper this should be convert into upper case
-              working-directory: demo-files/upper
+                ./demo-files/upper/ this should be convert into upper case
+              working-directory: upper
 
             
