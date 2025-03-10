@@ -38,6 +38,6 @@ jobs:
             - name: Execute python script
               run: |
                 python3 upper.py 'Testing This ouT'
-              working-directory: demo-files/PYTHON
+              working-directory: demo-files/python
 
             
