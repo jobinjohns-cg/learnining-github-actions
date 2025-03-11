@@ -25,14 +25,8 @@ jobs:
                 #   go-version: '1.22'
                 go-version-file: ./demo-files/upper/go.mod
                 cache-dependency-path: ./demo-files/upper/go.sum
-            - run: |
-                if [ ! -f ./demo-files/upper/go.mod ]; then
-                  echo "go.mod file not found!"
-                  exit 1
-                fi
-                go mod download
- 
-                go mod download
+            - run: go mod download
+              working-directory: demo-files/upper
 
             - name: build and test the go project
               run: |
