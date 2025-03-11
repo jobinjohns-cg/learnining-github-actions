@@ -22,8 +22,6 @@ jobs:
             - run: go version
             - uses: actions/setup-go@v5
               with:
-                #   go-version: '1.22'
-                go-version-file: ./demo-files/upper/go.mod
                 cache-dependency-path: ./demo-files/upper/go.sum
             - run: go mod download
 
@@ -42,10 +40,16 @@ jobs:
         steps:
             - name: Checkout repository
               uses: actions/checkout@v4
+            
+            - name: Set up Python 3.8
+              uses: actions/setup-python@v2
+              with:
+                python-version: '3.8'
+
             - name: Execute python script
               run: |
                 python --version
                 python3 upper.py 'Testing This ouT'
               working-directory: demo-files/python
 
-            
+        
